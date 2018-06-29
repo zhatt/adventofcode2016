@@ -56,9 +56,7 @@ How many blocks away is the first location you visit twice?
 
 #include "main.h"
 
-using namespace std;
-
-int mainfunc( istream& is, ostream& os, Part part ) {
+int mainfunc( std::istream& is, std::ostream& os, Part part ) {
 
     std::string line;
     getline( is, line );
@@ -75,7 +73,7 @@ int mainfunc( istream& is, ostream& os, Part part ) {
     const std::complex<int> turnRight( 0, -1 );
 
     // Indexed by complex number serialized to string.
-    std::unordered_set<string> visited;
+    std::unordered_set<std::string> visited;
     bool done = false;
 
     while ( ( ! done ) && ( tokenizer >> command ) ) {
@@ -107,7 +105,7 @@ int mainfunc( istream& is, ostream& os, Part part ) {
             // Move one step
             location += 1 * direction;
 
-            ostringstream key;
+            std::ostringstream key;
             key << location;
 
             if ( part == Part::PART2 ) {

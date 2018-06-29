@@ -1,0 +1,11 @@
+.*.swp
+.d
+*.o
+
+day[0-9]
+day[0-9][0-9]
+day[0-9]-test
+day[0-9][0-9]-test
+
+day*-test.out
+

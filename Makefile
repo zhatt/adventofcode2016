@@ -4,7 +4,7 @@ LDFLAGS = -lstdc++
 CXXFLAGS=-Wall -Werror -Og -g
 
 PROGS += day1
-#PROGS += day2
+PROGS += day2
 #PROGS += day3
 #PROGS += day4
 #PROGS += day5
@@ -39,7 +39,7 @@ clean:
 	rm -f ${PROGS} ${TESTPROGS} *.o ${DEPDIR}/* *-test.out
 
 day1: day1.o main.o
-#day2: day2.o main.o
+day2: day2.o main.o
 #day3: day3.o main.o
 #day4: day4.o main.o
 #day5: day5.o main.o
@@ -65,7 +65,7 @@ day1: day1.o main.o
 #day25: day25.o main.o
 
 day1-test: day1-test.o day1.o testmain.o -lgtest
-#day2-test: day2-test.o day2.o testmain.o -lgtest
+day2-test: day2-test.o day2.o testmain.o -lgtest
 #day3-test: day3-test.o day3.o testmain.o -lgtest
 #day4-test: day4-test.o day4.o testmain.o -lgtest
 #day5-test: day5-test.o day5.o testmain.o -lgtest

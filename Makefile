@@ -7,7 +7,7 @@ PROGS += day1
 PROGS += day2
 PROGS += day3
 PROGS += day4
-#PROGS += day5
+PROGS += day5
 #PROGS += day6
 #PROGS += day7
 #PROGS += day8
@@ -42,7 +42,7 @@ day1: day1.o main.o
 day2: day2.o main.o
 day3: day3.o main.o
 day4: day4.o main.o
-#day5: day5.o main.o
+day5: day5.o main.o -lcrypto
 #day6: day6.o main.o
 #day7: day7.o main.o
 #day8: day8.o main.o
@@ -68,7 +68,7 @@ day1-test: day1-test.o day1.o testmain.o -lgtest
 day2-test: day2-test.o day2.o testmain.o -lgtest
 day3-test: day3-test.o day3.o testmain.o -lgtest
 day4-test: day4-test.o day4.o testmain.o -lgtest
-#day5-test: day5-test.o day5.o testmain.o -lgtest
+day5-test: day5-test.o day5.o testmain.o -lgtest -lcrypto
 #day6-test: day6-test.o day6.o testmain.o -lgtest
 #day7-test: day7-test.o day7.o testmain.o -lgtest
 #day8-test: day8-test.o day8.o testmain.o -lgtest

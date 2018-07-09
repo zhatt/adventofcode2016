@@ -73,13 +73,11 @@ class Histogram {
         return c = c - 'a';
     }
 
+    // Histogram for each column of characters.  Indexed by [column][character]
+    // character array index 0 is 'a'.  See charToIndex().
     std::vector<std::array<int,histogramSize>> data_;
 
 public:
-
-    void increment( size_t index, char character ) {
-        data_[ index ][ charToIndex( character ) ]++;
-    }
 
     void addWord( const std::string s ) {
 
@@ -87,9 +85,9 @@ public:
             data_.resize( s.size() );
         }
 
-        size_t index = 0;
-        for ( char c : s ) {
-            increment( index++, c );
+        // Increment the value in each column.
+        for ( size_t index = 0; index < s.size(); index++ ) {
+            data_[ index ][ charToIndex( s[index] ) ]++;
         }
     }
 
@@ -121,7 +119,6 @@ public:
                     minCount = col[ index ];
                     minIndex = index;
                 }
-
             }
 
             char c = minIndex + 'a';
@@ -134,18 +131,17 @@ public:
 
 int mainfunc( std::istream& is, std::ostream& os, Part part ) {
 
-    Histogram hist;
+    Histogram histogram;
 
     std::string input;
-
     while( is >> input ) {
-        hist.addWord( input );
+        histogram.addWord( input );
     }
 
     if ( part == Part::PART1 ) {
-        os << hist.maxResult() << std::endl;
+        os << histogram.maxResult() << std::endl;
     } else {
-        os << hist.minResult() << std::endl;
+        os << histogram.minResult() << std::endl;
     }
 
     return 0;

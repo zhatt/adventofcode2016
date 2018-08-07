@@ -13,7 +13,7 @@ PROGS += day7
 PROGS += day8
 PROGS += day9
 PROGS += day10
-#PROGS += day11
+PROGS += day11
 #PROGS += day12
 #PROGS += day13
 #PROGS += day14
@@ -48,7 +48,7 @@ day7: day7.o main.o
 day8: day8.o main.o
 day9: day9.o main.o
 day10: day10.o main.o
-#day11: day11.o main.o
+day11: day11.o main.o
 #day12: day12.o main.o
 #day13: day13.o main.o
 #day14: day14.o main.o
@@ -74,7 +74,7 @@ day7-test: day7-test.o day7.o testmain.o -lgtest
 day8-test: day8-test.o day8.o testmain.o -lgtest
 day9-test: day9-test.o day9.o testmain.o -lgtest
 day10-test: day10-test.o day10.o testmain.o -lgtest
-#day11-test: day11-test.o day11.o testmain.o -lgtest
+day11-test: day11-test.o day11.o testmain.o -lgtest
 #day12-test: day12-test.o day12.o testmain.o -lgtest
 #day13-test: day13-test.o day13.o testmain.o -lgtest
 #day14-test: day14-test.o day14.o testmain.o -lgtest

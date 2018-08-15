@@ -5,7 +5,6 @@
 #include <sstream>
 #include <string>
 
-#include "day11.h"
 #include "main.h"
 
 using namespace std;

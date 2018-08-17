@@ -84,7 +84,7 @@ long simulate( SimType simtype, long maxSteps, long input, Coordinate target ) {
     Coordinate startLocation( 1, 1 );
     assert( !( startLocation == target ) );
 
-    std::unordered_set<Coordinate> visitedIn50;
+    std::unordered_set<Coordinate> visitedInMaxSteps;
 
     State start;
     start.currentLocation = startLocation;
@@ -101,7 +101,7 @@ long simulate( SimType simtype, long maxSteps, long input, Coordinate target ) {
                 if ( current.stepCount <= maxSteps ) {
                     // Save to all set.
                     for ( const auto& c : current.visited ) {
-                        visitedIn50.insert( c );
+                        visitedInMaxSteps.insert( c );
                     }
                 }
                 if ( current.stepCount == maxSteps ) {
@@ -141,7 +141,7 @@ long simulate( SimType simtype, long maxSteps, long input, Coordinate target ) {
     // error.
     assert( simtype != SimType::TARGET );
 
-    return visitedIn50.size();
+    return visitedInMaxSteps.size();
 
     return 0;
 }

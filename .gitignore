@@ -7,6 +7,8 @@ day[0-9][0-9]
 day[0-9]-test
 day[0-9][0-9]-test
 machine-test
+md5-test
 
 day*-test.out
 machine-test.out
+md5-test.out

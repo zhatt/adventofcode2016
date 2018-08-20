@@ -16,7 +16,7 @@ PROGS += day10
 PROGS += day11
 PROGS += day12
 PROGS += day13
-#PROGS += day14
+PROGS += day14
 #PROGS += day15
 #PROGS += day16
 #PROGS += day17
@@ -31,6 +31,7 @@ PROGS += day13
 
 TESTPROGS = ${PROGS:=-test}
 TESTPROGS += machine-test
+TESTPROGS += md5-test
 
 all: ${PROGS} ${TESTPROGS}
 
@@ -52,7 +53,7 @@ day10: day10.o main.o
 day11: day11.o main.o
 day12: day12.o main.o
 day13: day13.o main.o
-#day14: day14.o main.o
+day14: day14.o main.o -lcrypto
 #day15: day15.o main.o
 #day16: day16.o main.o
 #day17: day17.o main.o
@@ -78,7 +79,7 @@ day10-test: day10-test.o day10.o testmain.o -lgtest
 day11-test: day11-test.o day11.o testmain.o -lgtest
 day12-test: day12-test.o day12.o testmain.o -lgtest
 day13-test: day13-test.o day13.o testmain.o -lgtest
-#day14-test: day14-test.o day14.o testmain.o -lgtest
+day14-test: day14-test.o day14.o testmain.o -lgtest -lcrypto
 #day15-test: day15-test.o day15.o testmain.o -lgtest
 #day16-test: day16-test.o day16.o testmain.o -lgtest
 #day17-test: day17-test.o day17.o testmain.o -lgtest
@@ -91,6 +92,7 @@ day13-test: day13-test.o day13.o testmain.o -lgtest
 #day24-test: day24-test.o day24.o testmain.o -lgtest
 #day25-test: day25-test.o day25.o testmain.o -lgtest
 machine-test: machine-test.o testmain.o -lgtest
+md5-test: md5-test.o testmain.o -lgtest -lcrypto
 
 %-test.out: %-test
 	set -o pipefail; \
